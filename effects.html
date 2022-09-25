@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styleEffect.css">
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" /> 
+        <title>Music Music</title>
+    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.min.js"></script>
+        <body>
+            <header>
+                <h1>Аудио эффекты</h1>
+            </header>
+            <main>
+                <div class="main">
+                    <a href="./index.html">
+                        <button>На главную</button>
+                    </a> 
+                </div> 
+                <!-- <input id="audio_input" type="File" accept="audio/*" onChange="loadAudio()"> -->
+            <div class="effect-container">
+                <div class="post-item">
+                    <div class="item-content">
+                        <div class="item-body">
+                            <div class="delay">
+                                <h2>Delay: </h2>
+                                <button id="delay-btn">Start</button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="post-item1">
+                    <div class="item-content">
+                        <div class="item-body1">
+                            <div class="audio-bpm">
+                            <p>Диле́й (англ. delay), или э́хо (англ. echo) — звуковой эффект или соответствующее устройство, 
+                                имитирующее чёткие затухающие повторы (эхо) исходного сигнала. 
+                                Эффект реализуется добавлением к исходному сигналу его копии или нескольких копий, 
+                                задержанных по времени. Под дилеем обычно подразумевается однократная задержка сигнала, 
+                                в то время как эффект «эхо» — многократные повторы. По принципу действия является частным случаем ревербератора. 
+                                Отличие заключается в том, что дилей имеет одну линию задержки и больший временной интервал (не менее 50—60 мс), 
+                                который позволяет отделить оригинальный звук от эффекта на слух. Эффект дилея не встречается в природе и носит 
+                                рукотворный характер.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="effect-container">    
+                <div class="post-item">
+                    <div class="item-content">
+                        <div class="item-body">
+                            <div class="distortion">
+                                <h4 id="distortion">Distortion</h4>
+                                <div class="slider-group">
+                                    <div class="slider">
+                                        <label for="volume-dist">Volume</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="1" id="volume-dist" />
+                                        <div class="slider-value">1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="distortion-gain">Gain</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.4" id="distortion-gain" />
+                                        <div class="slider-value">0.4</div>
+                                    </div>
+                                </div>
+                                <div class="controls">
+                                    <button id="stop-dist" class="fa-solid fa-stop"></button>
+                                    <button id="play-dist" class="fa-solid fa-play"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-item1">
+                    <div class="item-content">
+                        <div class="item-body1">
+                            <div class="audio-bpm">
+                            <p>Дисто́ршн (также «дистошн», «дисторция»; англ. distortion — искажение) — 
+                                эффект достигается путем электронного сжатия или с помощью клиппирования входного звукового сигнала. 
+                                В результате он добавляет звуку сустейн, дополнительные гармоники и обертона, создавая богатый звук. 
+                                При минимальном вмешательстве в форму звуковой волны, можно оригинальный звук сделать более теплым и «толстым», 
+                                а при радикальном искажении - добавить жирность, злость, да и вообще существенно изменить тембр. 
+                                Достигается эффект дисторшн за счёт обрезки амплитуды аудиосигнала, когда срезаются пики в определенном интервале.
+                                Рисунок позволяет наглядно увидеть, чем отличаются входящий и искаженные сигналы:
+                                </p><img src="dist.png" alt="График дисторшена">
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="effect-container"> 
+                <div class="post-item">
+                    <div class="item-content">
+                        <div class="item-body">
+                            <div class="flanger">
+                                <h4 id="flanger">Flanger</h4>
+                                <div class="slider-group">
+                                    <div class="slider">
+                                        <label for="volume-flanger">Volume</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="1" id="volume-flanger" />
+                                        <div class="slider-value">1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="flanger-time">Time</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.01" id="flanger-time" />
+                                        <div class="slider-value">0.45</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="flanger-speed">Speed</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.25" id="flanger-speed" />
+                                        <div class="slider-value">0.2</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="flanger-depth">Depth</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.002" id="flanger-depth" />
+                                        <div class="slider-value">0.1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="flanger-feedback">Feedback</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.6" id="flanger-feedback" />
+                                        <div class="slider-value">0.1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="flanger-mix">Mix</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.5" id="flanger-mix" />
+                                        <div class="slider-value">0.5</div>
+                                    </div>
+                                </div>
+                                <div class="controls">
+                                    <button id="stop-flanger" class="fa-solid fa-stop"></button>
+                                    <button id="play-flanger" class="fa-solid fa-play"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-item1">
+                    <div class="item-content">
+                        <div class="item-body1">
+                            <div class="audio-bpm">
+                            <p>Фланжер (англ. flanger, flange — фланжировать, фланец, фланцевать) — звуковой эффект или соответствующее устройство. 
+                                Напоминает «летящее» звучание. По принципу работы схож с хорусом, и отличается от него временем задержки (5—15 мс) 
+                                и наличием обратной связи (feedback). Сначала входной сигнал разделяется на два независимых сигнала, один из которых 
+                                остается без изменений, в то время как другой поступает на линию задержки. В линии задержки осуществляется задержка сигнала 
+                                на 5-15 мс, причем время задержки изменяется в соответствии с сигналом генератора низких частот. На выходе задержанный сигнал 
+                                смешивается с исходным. Генератор низких частот осуществляет модуляцию времени задержки сигнала. Он вырабатывает колебания 
+                                определённой формы, лежащие в пределах от 3 Гц и ниже. Изменяя частоту, форму и амплитуду колебаний низкочастотного генератора, 
+                                можно получать различный выходной сигнал. Часть выходного сигнала подается обратно на вход и в линию задержки. В результате 
+                                резонанса сигналов получается фланжер-эффект. Фаза сигнала обратной связи иногда инвертируется, тем самым достигается дополнительная 
+                                вариация звукового сигнала. Параметры эффекта:
+                                <ul>
+                                    <li>Скорость (Speed, Rate) - скорость изменения времени задержки.</li>
+                                    <li>Глубина (Depth, Range) - характеризует диапазон изменения времени задержки.</li>
+                                    <li>Обратная связь (Feedback) - количество подаваемого сигнала с выхода на вход.</li>
+                                    <li>Баланс (Mix, Dry/wet) - соотношение необработанного и обработанного сигналов.</li>
+                                </ul></p>
+                             </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            
+            <div class="effect-container">
+                <div class="post-item">
+                    <div class="item-content">
+                        <div class="item-body">
+                            <div class="reverb">
+                                <h4 id="reverb">Reverb</h4>
+                                <div class="slider-group">
+                                    <div class="slider">
+                                        <label for="volume-reverb">Volume</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="1" id="volume-reverb" />
+                                        <div class="slider-value">1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="reverb-time">Time</label>
+                                        <input type="range" min="0.01" max="3" step="0.01" value="0.01" id="reverb-time" />
+                                        <div class="slider-value">0.01</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="reverb-decay">Decay</label>
+                                        <input type="range" min="0.0" max="3" step="0.01" value="0.01" id="reverb-decay" />
+                                        <div class="slider-value">0.01</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="reverb-mix">Mix</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.5" id="reverb-mix" />
+                                        <div class="slider-value">0.5</div>
+                                    </div>
+                                </div>
+                                <div class="controls">
+                                    <button id="stop-reverb" class="fa-solid fa-stop"></button>
+                                    <button id="play-reverb" class="fa-solid fa-play"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-item1">
+                    <div class="item-content">
+                        <div class="item-body1">
+                            <div class="audio-bpm">
+                            <p>Реверберация (англ. Reverberation или Reverb) — эффект создаётся, когда какой-либо звук звучит в замкнутом пространстве, 
+                                в результате чего отражения от поверхностей стен вызывают большое количество эхо, затем звук медленно затухает по 
+                                причине поглощения звуковых волн стенами и воздухом. Эффект наиболее заметен, когда источник звука перестаёт звучать, 
+                                но отражения всё ещё звучат, амплитуда отражений постепенно затухает, пока они не перестают быть слышны. 
+                                Длительность затухания отражений называется временем реверберации. Оно получает особое внимание при архитектурном 
+                                проектировании больших камерных залов, которые должны иметь определенное время реверберации для достижения оптимальной 
+                                эффективности. По сравнению с различными эхо, звучание которых расположено с промежутком в 50 - 100 мс, 
+                                реверберация имеет тысячи эхо, которые расположены очень близко (0.01 - 1 мс между эхо-сигналами). 
+                                С помощью реверберации можно создать эффект приближения и удаления источника звука. Для этого постепенно изменяют 
+                                уровень реверберации, создавая иллюзию изменения звукового плана. При озвучивании фильмов или звуковом оформлении 
+                                нередко возникает потребность подчеркнуть акустическую обстановку того или иного места действия. Для этого также 
+                                используют эффект реверберации.Эффект также очень часто используют для улучшения и подчёркивания художественной 
+                                выразительности речи, вокала, звучания отдельных музыкальных инструментов. Реверберации может нести не только характер 
+                                внешнего оформления, но и использоваться как средство усиления драматического действия. Например шёпот записанный с 
+                                большим временем реверберации создаёт напряжённый, пугающий эффект.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="effect-container">
+                <div class="post-item">
+                    <div class="item-content">
+                        <div class="item-body">
+                            <div class="tremolo">
+                                <h4 id="tremolo">Tremolo</h4>
+                                <div class="slider-group">
+                                    <div class="slider">
+                                        <label for="volume-tremolo">Volume</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="1" id="volume-tremolo" />
+                                        <div class="slider-value">1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="tremolo-speed">Speed</label>
+                                        <input type="range" min="0" max="20" step="0.01" value="7" id="tremolo-speed" />
+                                        <div class="slider-value">7</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="tremolo-depth">Depth</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.8" id="tremolo-depth" />
+                                        <div class="slider-value">0.8</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="tremolo-mix">Mix</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="0.8" id="tremolo-mix" />
+                                        <div class="slider-value">0.8</div>
+                                    </div>
+                                </div>
+                                <div class="controls">
+                                    <button id="stop-tremolo" class="fa-solid fa-stop"></button>
+                                    <button id="play-tremolo" class="fa-solid fa-play"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-item1">
+                    <div class="item-content">
+                        <div class="item-body1">
+                            <div class="audio-bpm">
+                            <p>Тремоло — это эффект модуляции, который ритмично изменяет громкость вашего сигнала. 
+                                Изменение амплитуды звука, достигаемое с помощью электронных средств, иногда ошибочно называемое вибрато и 
+                                производящее звук, несколько напоминающий фленджер, называемый «подводным эффектом».</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="effect-container">
+                <div class="post-item">
+                    <div class="item-content">
+                        <div class="item-body">
+                            <div class="stereo-pan">
+                                <h4 id="stereo-pan">Stereo panner</h4>
+                                <div class="slider-group">
+                                    <div class="slider">
+                                        <label for="volume-panner">Volume</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="1" id="volume-panner" />
+                                        <div class="slider-value">1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="stereo-panner-pan">Pan</label>
+                                        <input type="range" min="-1" max="1" step="0.01" value="0.0" id="stereo-panner-pan" />
+                                        <div class="slider-value">0.0</div>
+                                    </div>
+                                </div>
+                                <div class="controls">
+                                    <button id="stop-panner" class="fa-solid fa-stop"></button>
+                                    <button id="play-panner" class="fa-solid fa-play"></button>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="post-item1">
+                    <div class="item-content">
+                        <div class="item-body1">
+                            <div class="audio-bpm">
+                            <p>Эффект стереопанорамирования позволяет изменить громкость звука, исходящего из левого или правого динамика. 
+                                Например, если у вас есть стереозапись со всем звуком, исходящим только из одного динамика, вы можете использовать 
+                                эффект панорамирования, чтобы «центрировать» звук самостоятельно. Вы также можете сделать так, чтобы центральное 
+                                изменение звука перемещалось от одного динамика к другому во время воспроизведения звукового файла.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="effect-container">
+                <div class="post-item">
+                    <div class="item-content">
+                        <div class="item-body">
+                            <div class="compressor">
+                                <h4 id="compressor">Compressor</h4>
+                                <div class="slider-group">
+                                    <div class="slider">
+                                        <label for="volume-compressor">Volume</label>
+                                        <input type="range" min="0" max="1" step="0.01" value="1" id="volume-compressor" />
+                                        <div class="slider-value">1</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="compressor-threshold">Threshold</label>
+                                        <input type="range" min="-100" max="0" step="1" value="-24" id="compressor-threshold" />
+                                        <div class="slider-value">-24</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="compressor-knee">Knee</label>
+                                        <input type="range" min="0" max="40" step="1" value="30" id="compressor-knee" />
+                                        <div class="slider-value">30</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="compressor-attack">Attack</label>
+                                        <input type="range" min="0" max="1" step="0.001" value="0.003" id="compressor-attack" />
+                                        <div class="slider-value">0.003</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="compressor-release">Release</label>
+                                        <input type="range" min="0" max="1" step="0.001" value="0.250" id="compressor-release" />
+                                        <div class="slider-value">0.250</div>
+                                    </div>
+                                    <div class="slider">
+                                        <label for="compressor-ratio">Ratio</label>
+                                        <input type="range" min="1" max="20" step="1" value="12" id="compressor-ratio" />
+                                        <div class="slider-value">12</div>
+                                    </div>
+                                </div>
+                                <div class="controls">
+                                    <button id="stop-compressor" class="fa-solid fa-stop"></button>
+                                    <button id="play-compressor" class="fa-solid fa-play"></button>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="post-item1">
+                    <div class="item-content">
+                        <div class="item-body1">
+                            <div class="audio-bpm">
+                            <p>Компрессор (от англ. «compress» — сжимать, сдавливать) — электронное устройство или компьютерная программа, 
+                                выполняющее уменьшение (сжатие) динамического диапазона звукового сигнала; иными словами, компрессор позволяет 
+                                сделать более узкой разницу между самым тихим и самым громким звуком. Суть работы компрессора состоит в том, 
+                                что он непрерывно определяет уровень входного сигнала, и, если тот превышает заданное пороговое значение, компрессор 
+                                его ослабляет на определённую величину (срабатывает). Сжатие может улучшить слышимость звука в шумных местах, 
+                                где фоновый шум может скрывать тихие звуки. В то время как громкие звуки будут находится на комфортном для прослушивания уровне, 
+                                тихие будут не слышны, и если просто повысить общую громкость, то тихие звуки станут слышны, но громкие станут слишком громкими. 
+                                Если к этому звуку применить компрессию снижающую уровень громких звуков, 
+                                то общий уровень громкости может быть увеличен до того уровня, когда будут слышны тихие звуки, и в то же время громкие будут не 
+                                слишком громкими. Компрессор имеет четыре основных параметра:
+                                <ul>
+                                    <li>Пороговый уровень (порог срабатывания) (англ. Threshold) — определяет уровень входного сигнала, выше которого компрессор начинает ослаблять сигнал. Выражается в децибелах</li>
+                                    <li>Колено (англ. Knee) управляет изгибом компрессии на пороговом значении, оно может быть острым или округлым. Мягкое колено медленно увеличивает 
+                                        соотношение сжатия, и в конечном итоге достигает сжатия заданного пользователем. Мягкое колено уменьшает заметность перехода от 
+                                        несжатого сигнала к сжатому, особенно для более высокого соотношения, где переход более заметен. При жёстком колене компрессия 
+                                        начинается и прекращается резко, что делает её более заметной.</li>
+                                    <li>Время атаки (англ. Attack) — это время, которое проходит между превышением порогового значения и моментом достижения заданного соотношения. 
+                                        Выражается в миллисекундах. Эксперименты с этим параметром позволяют получить особые эффекты, например, можно сделать звук бас-барабана 
+                                        заметно чётче.</li>
+                                    <li>Время спада (восстановления) (англ. Release) — это время, которое проходит между тем, как уровень входного сигнала упал ниже порога, 
+                                        и моментом, когда компрессор перестаёт ослаблять сигнал. Также выражается в миллисекундах.</li>
+                                    <li>Соотношение (степень сжатия) (англ. Ratio) — определяет интенсивность ослабления сигнала, выражается в формате «х:1», где «1» — 
+                                        превышение уровня выходного сигнала над пороговым уровнем равное 1 дБ, а «x» — соответствующее ему превышение уровня входного сигнала в 
+                                        децибелах над пороговым уровнем. Например, если установлено соотношение «2:1», то при превышении входным сигналом порогового уровня на 
+                                        10 дБ на выходе компрессора сигнал будет на 5 дБ выше порогового уровня.</li>
+                                </ul></p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+
+            </main>
+            <footer></footer>
+            
+            <script src="effect1.js"></script>
+            <script src="pizEffects.js"></script>
+        </body>
+    
+</html>

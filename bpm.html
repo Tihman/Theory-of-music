@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" /> 
+        <title>Music Something</title>
+    </head>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.cursor.min.js"></script>
+        <script src="player.js"></script> 
+        <script src="test2.js"></script>
+        <body>
+            <header>
+                <h1>Определение BPM</h1>
+            </header>
+            <main>
+                <div class="main">
+                    <a href="./index.html">
+                        <button>На главную</button>
+                    </a> 
+                </div> 
+                <input id="audio_input" type="File" accept="audio/*" onChange="loadAudio();loadAudio2()"">
+                <div class="player-container">
+                    <div class="audio"></div>
+                    <div class="buttons">
+                        <span class="play-btn btn">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-pause"></i>
+                        </span>
+                        <span class="stop-btn btn">
+                            <i class="fa-solid fa-stop"></i>
+                        </span>
+                        <span class="mute-btn btn">
+                            <i class="fa-solid fa-volume-high"></i>
+                            <i class="fa-solid fa-volume-xmark"></i>
+                        </span>
+                        <input type="range" min="0" max="1" step="0.1" value="0.5" class="volume-slider"/>
+                        <span class="dur">
+                            <b id="time-current">0:00</b> / <b id="time-total">0:00</b>
+                        </span>
+                        <b>Zoom:</b>
+                        <input id="slider" type="range" min="1" max="500" value="0" class="zoom"/>
+                       </div>
+                </div>
+                    <div class="post-item">
+                        <div class="item-content">
+                            <div class="item-body">
+                                <div class="audio-bpm">
+                                <p>BPM (темп) аудио: <span id="output"></span> </p>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="post-item">
+                            <div class="item-content">
+                                <div class="item-body1">
+                                    <p>BPM (bpm, англ. beats per minute, удары в минуту) в музыке — показатель, 
+                                        определяющий скорость исполнения или воспроизведения композиции. 
+                                        BPM — это количество четвертных нот в минуту, например, 120 BPM означает, 
+                                        что в минуту играется 120 четвертных нот (следовательно, 2 четверти в секунду), 
+                                        или 120 четвертных ударов метронома в минуту. Стиль (или жанр) музыкального 
+                                        произведения определяется рядом признаков, таких как темп, использование определённых 
+                                        звуков и паттернов. Скорее всего, вы сразу можете определить жанр песни, когда её слышите, 
+                                        только на основе вашего слушательского опыта. Ниже приведены «типичные» диапазоны темпов 
+                                        для некоторых распространённых жанров:  
+                                        <ul>
+                                            <li>Рок: 70-95 ударов в минуту</li>
+                                            <li>Хип-хоп: 80-130 ударов в минуту</li>
+                                            <li>R&B: 70-110 ударов в минуту</li>
+                                            <li>Поп: 110-140 ударов в минуту</li>
+                                            <li>Хаус: 115-130 ударов в минуту</li>
+                                            <li>Техно/транс: 120-140 ударов в минуту</li>
+                                            <li>Драм-н-бэйс: 160-180 ударов в минуту</li>
+                                          </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+            </main>
+            <footer></footer>
+        </body>
+</html>

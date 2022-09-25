@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(168, 135, 196);
+}
+h1 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#audio-tracks {
+    border-collapse: collapse;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+#audio-tracks td, #audio-tracks th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+    
+#audio-tracks th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+}
+
+.audio-input {
+    width:100%;
+    margin-left:10px;
+}
+.main {
+    margin-bottom: 10px;
+}
+
+.player-container {
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 10px;
+    /* margin-left: auto; */
+    margin-right: auto;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+    /* background-color: darkcyan; */
+    position:relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.player-container .audio {
+    background-color: white;
+    width: 100%;
+    height: 130px;
+}
+.player-container .btn {
+    padding:16px;
+    width: 24px;
+    margin-right: 8px;
+    cursor: pointer;
+    display: inline-block;
+}
+.player-container .volume-slider {
+    width:200px;
+}
+.player-container .buttons .play-btn .fa-pause {
+    display: none;
+}
+.player-container .buttons .mute-btn .fa-volume-xmark {
+    display: none;
+}
+.player-container .buttons .play-btn.playing .fa-pause {
+    display: inline-block;
+}
+.player-container .buttons .play-btn.playing .fa-play {
+    display: none;
+}
